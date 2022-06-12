@@ -12,5 +12,5 @@ export interface IButton {
     className?: string
     onClick?: MouseEventHandler<HTMLButtonElement>
     type?: string
-    label?: string
+    label?: string | null
 }

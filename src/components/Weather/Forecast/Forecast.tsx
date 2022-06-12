@@ -1,9 +1,9 @@
 import ForecastItem from "./ForecastItem";
-import {IForecastWeather} from "../../types/Weather";
+import {ICityForecast, IForecastWeather} from "../../types/Weather";
 import {ForecastItemContext} from "../Weather";
 
 function ForecastWeather({cityName}: IForecastWeather) {
-    const listItem = (forecastList) =>  [...forecastList].map((item) => <ForecastItem key={item.date} cityForecast={item}/>)
+    const listItem = (forecastList: ICityForecast[]) =>  [...forecastList].map((item) => <ForecastItem key={item.date} cityForecast={item}/>)
 
     return (
         <ForecastItemContext.Consumer>

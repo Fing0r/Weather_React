@@ -8,7 +8,7 @@ function FavoriteCities({favoriteCities, setFavoriteCities, setSelectedCity}: IF
         setSelectedCity(city)
     }
 
-    const deleteFavoriteCity = (city: string) => {
+    const deleteFavoriteCity = (city: string | null) => {
         setFavoriteCities(prv => removeFavoriteCity(prv, city))
     }
 

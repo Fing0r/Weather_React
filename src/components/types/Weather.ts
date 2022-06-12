@@ -20,14 +20,13 @@ export interface ICityForecast {
 }
 
 export interface ICitySearchForm {
-    setCityInfo: Dispatch<SetStateAction<ICityWeather | null>>
-    setCityForecast: Dispatch<SetStateAction<ICityForecast[] | null>>
+    setSelectedCity: Dispatch<SetStateAction<string>>
 }
 
 export interface IInfoWeather {
     cityInfo: ICityWeather | null
     cityForecast: ICityForecast[] | null
-    setFavoriteCity: Dispatch<SetStateAction<Set<string>>>
+    setFavoriteCities: Dispatch<SetStateAction<Set<string>>>
 }
 
 export interface INowWeather {
@@ -35,16 +34,15 @@ export interface INowWeather {
     setFavoriteCity: Dispatch<SetStateAction<Set<string>>>
 }
 
-export interface IForecastWeather{
+export interface IForecastWeather {
     cityForecast: ICityForecast[] | null
     cityName?: string | null
 }
 
-export interface IFavoriteCities{
+export interface IFavoriteCities {
     favoriteCities: Set<string>
-    setCityInfo: Dispatch<SetStateAction<ICityWeather | null>>
     setFavoriteCities: Dispatch<SetStateAction<Set<string>>>
-    setCityForecast: Dispatch<SetStateAction<ICityForecast[] | null>>
+    setSelectedCity: Dispatch<SetStateAction<string>>
 }
 
 export interface IForecastData {
@@ -62,5 +60,13 @@ export interface IForecastData {
 }
 
 export interface IButtonToggleFavorite {
-    toggleFavoriteCity: MouseEventHandler<HTMLButtonElement>
+    isFavorite: Boolean | null
+    onClick: MouseEventHandler<HTMLButtonElement>
+}
+
+export interface ITabBtn {
+    activeTab: string
+    tabBtn: string
+    label: string
+    handleChangeTab: (index: string) => void
 }

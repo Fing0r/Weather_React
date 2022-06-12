@@ -1,12 +1,4 @@
-import {Dispatch, SetStateAction} from "react";
-
-interface ITabBtn {
-    activeTab: string
-    tabBtn: string
-    label: string
-    // handleChangeTab: (index:string) => Dispatch<SetStateAction<string>>
-    handleChangeTab: (index:string) => void
-}
+import {ITabBtn} from "../../types/Weather";
 
 function TabBtn({activeTab, handleChangeTab, tabBtn, label}: ITabBtn) {
     const handleClick = () => handleChangeTab(tabBtn)

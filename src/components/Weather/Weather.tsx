@@ -9,17 +9,15 @@ import {getCurrentWeather, getForecast} from "../../API";
 
 const cities = getDataFromStorage(STORAGE.FAVORITE_CITIES);
 const citySelected = getDataFromStorage(STORAGE.SELECTED_CITY);
-export const ForecastItemContext = createContext({
-    date: 0, temp: 0, feelsLike: 0, main: "", icon: ""
-})
 
-export const FavoriteCitiesContext = createContext(null)
+export const ForecastItemContext = createContext<ICityForecast[] | null>(null)
+export const FavoriteCitiesContext = createContext<any>(null)
 
 export default function Weather() {
     const [cityInfo, setCityInfo] = useState<null | ICityWeather>(null);
     const [cityForecast, setCityForecast] = useState<null | ICityForecast[]>(null);
-    const [favoriteCities, setFavoriteCities] = useState<Set<string>>(new Set(null));
-    const [selectedCity, setSelectedCity] = useState("");
+    const [favoriteCities, setFavoriteCities] = useState<Set<string>>(new Set());
+    const [selectedCity, setSelectedCity] = useState<string>("");
 
     useEffect(() => {
         setSelectedCity(citySelected)
@@ -35,6 +33,7 @@ export default function Weather() {
     }, [selectedCity])
 
     useEffect(() => {
+        console.log(favoriteCities)
         updateDataFromStorage(STORAGE.FAVORITE_CITIES, [...favoriteCities])
     }, [favoriteCities])
 
@@ -51,7 +50,7 @@ export default function Weather() {
         }
     }
 
-    const checkFavoriteCities = (name: string) => [...favoriteCities].includes(name)
+    const checkFavoriteCities = (name: string) => [...favoriteCities].includes(name);
 
     return (
         <ForecastItemContext.Provider value={cityForecast}>
@@ -67,7 +66,7 @@ export default function Weather() {
                             <InfoWeather
                                 cityInfo={cityInfo}
                                 setFavoriteCities={setFavoriteCities}
-                            />
+                                cityForecast={cityForecast}/>
                         </div>
                         <div className="weather__item weather__item--cities">
                             <FavoriteCities

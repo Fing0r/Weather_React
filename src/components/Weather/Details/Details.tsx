@@ -1,6 +1,5 @@
 import {getTime} from "../../../utils";
 import {ICityWeather} from "../../types/Weather";
-import Title from "../../UI/Title";
 
 function DetailsWeather({cityInfo}: { cityInfo: ICityWeather | null }) {
     if (!cityInfo) return null
@@ -10,7 +9,7 @@ function DetailsWeather({cityInfo}: { cityInfo: ICityWeather | null }) {
 
     return (
         <div className="details">
-            <Title hLevel="3" title={name} className="details__city"/>
+            <h3 className="details__city">{name}</h3>
             <div className="details__info">
                 <span className="details__temperature">{`Temperature: ${Math.round(temp)}°`}</span>
                 <span className="details__feels">{`Feels like: ${Math.round(feelsLike)}°`}</span>

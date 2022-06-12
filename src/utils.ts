@@ -1,7 +1,7 @@
 import {CONFIG} from "./config";
 import { format } from "date-fns";
 
-export const removeFavoriteCity = (prv:  Set<string>, city: string) => new Set([...prv].filter(v => v !== city));
+export const removeFavoriteCity = (prv: string | Set<string>, city: string | null) => new Set([...prv].filter(v => v !== city));
 export const addFavoriteCity = (prv:  Set<string>, city: string) => new Set([...prv, city]);
 export function getDataFromStorage(storage: string) {
     const getJSONFromStorage = localStorage.getItem(storage) || '[]'

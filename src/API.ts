@@ -38,9 +38,8 @@ export async function getForecast(city: string) {
     if (!city) return;
     const url = getUrl(city, CONFIG.FORECAST);
     const response = await fetch(url);
+    if (!response.ok) throw new Error("Ошибка запроса");
     const {list} = await response.json();
-
-    if (!response.ok) throw new Error("Ошибка запроса")
 
     return list.map((item: IForecastData) => createForecastItem(item))
 }
