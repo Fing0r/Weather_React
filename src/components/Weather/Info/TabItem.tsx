@@ -1,13 +1,17 @@
-interface ITabItem {
-    tabItem: string
-    activeTab: string
-    children: JSX.Element | null
-}
+import {FC} from "react";
+import {ITabItem} from "@/components/types/Weather";
 
-function TabItem({children, tabItem, activeTab}: ITabItem) {
+
+const TabItem: FC<ITabItem> = (
+    {
+        children,
+        tabItem,
+        activeTab
+    }
+) => {
     if (activeTab !== tabItem) return null;
 
-    return(
+    return (
         <div className="info__box active">
             {children}
         </div>

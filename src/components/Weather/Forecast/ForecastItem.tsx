@@ -1,12 +1,19 @@
-import {getTime, getDate} from "../../../utils";
-import {CONFIG} from "../../../config";
-import {ICityForecast} from "../../types/Weather";
-import {useState} from "react";
-
-function ForecastItem({cityForecast}: { cityForecast: ICityForecast }) {
-    const {date, temp, feelsLike, main, icon} = cityForecast;
+import {getTime, getDate} from "@/utils";
+import {CONFIG} from "@/config";
+import {IForecastItem} from "../../types/Weather";
+import {FC} from "react";
+//
+const ForecastItem: FC<IForecastItem> = (
+    {
+        date,
+        temp,
+        feelsLike,
+        main,
+        icon
+    }
+) => {
     const isNotValid = !date || !temp || !feelsLike || !main || !icon
-    if  (isNotValid) return null
+    if (isNotValid) return null
 
     return (
         <li className="forecast__card">

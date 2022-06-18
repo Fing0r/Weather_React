@@ -1,6 +1,7 @@
 import Button from "../../UI/Button";
+import {FC} from "react";
 
-function ButtonSearch() {
+const ButtonSearch: FC = () => {
     return(
         <Button className="search__btn">
             <svg width="30" height="30" fill="none">

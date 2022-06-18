@@ -1,52 +1,36 @@
-import {Dispatch, MouseEventHandler, SetStateAction} from "react"
+import {MouseEventHandler, ReactNode} from "react"
 
-export interface ICityWeather {
-    date?: number | null
-    temp?: number | null
-    feelsLike?: number | null
-    icon?: string | null
-    name?: string | null
-    main?: string | null
-    sunrise?: number | null
-    sunset?: number | null
+export interface IForecastDataList {
+    list: IForecastData[]
 }
 
-export interface ICityForecast {
-    date: number | null
-    temp: number | null
-    feelsLike: number | null
-    main: string | null
-    icon: string | null
+export interface IWeatherItem {
+    date?: number
+    feelsLike?: number
+    temp?: number
+    sunrise?: number
+    sunset?: number
+    main?: string
+    icon?: string
+    name?: string
 }
 
-export interface ICitySearchForm {
-    setSelectedCity: Dispatch<SetStateAction<string>>
+export interface IForecastItem {
+    date: number
+    temp?: number
+    feelsLike?: number
+    main?: string
+    icon?: string
 }
 
-export interface IInfoWeather {
-    cityInfo: ICityWeather | null
-    cityForecast: ICityForecast[] | null
-    setFavoriteCities: Dispatch<SetStateAction<Set<string>>>
-}
-
-export interface INowWeather {
-    cityInfo: ICityWeather | null
-    setFavoriteCity: Dispatch<SetStateAction<Set<string>>>
-}
-
-export interface IForecastWeather {
-    cityForecast: ICityForecast[] | null
-    cityName?: string | null
-}
-
-export interface IFavoriteCities {
-    favoriteCities: Set<string>
-    setFavoriteCities: Dispatch<SetStateAction<Set<string>>>
-    setSelectedCity: Dispatch<SetStateAction<string>>
+export interface ITabItem {
+    tabItem: string
+    activeTab: string
+    children: ReactNode
 }
 
 export interface IForecastData {
-    dt: string,
+    dt: number,
     main: {
         temp: number,
         feels_like: number,
@@ -56,6 +40,25 @@ export interface IForecastData {
             main: string,
             icon: string,
         },
+    },
+}
+
+export interface IWeatherData {
+    dt: number,
+    main: {
+        temp: number,
+        feels_like: number,
+    },
+    name: string,
+    weather: {
+        0: {
+            main: string,
+            icon: string,
+        },
+    },
+    sys: {
+        sunrise: number,
+        sunset: number,
     },
 }
 

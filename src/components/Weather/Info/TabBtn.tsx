@@ -1,6 +1,7 @@
 import {ITabBtn} from "../../types/Weather";
+import {FC} from "react";
 
-function TabBtn({activeTab, handleChangeTab, tabBtn, label}: ITabBtn) {
+const TabBtn: FC<ITabBtn> = ({activeTab, handleChangeTab, tabBtn, label}) => {
     const handleClick = () => handleChangeTab(tabBtn)
     const classes = activeTab === tabBtn ? "info__btn active" : "info__btn"
 

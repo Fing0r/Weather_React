@@ -9,5 +9,6 @@ export const CONFIG = {
 
 export const STORAGE = {
     FAVORITE_CITIES: "FavoriteCities",
-    SELECTED_CITY: "favoriteCity"
+    SELECTED_CITY: "favoriteCity",
+    USER_STATS: "stats"
 };

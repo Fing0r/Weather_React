@@ -1,7 +1,8 @@
 import Button from "../../UI/Button";
 import {IButtonToggleFavorite} from "../../types/Weather";
+import {FC} from "react";
 
-function ButtonToggleFavorite({isFavorite, onClick}: IButtonToggleFavorite) {
+const ButtonToggleFavorite: FC<IButtonToggleFavorite> = ({isFavorite, onClick}) => {
     const classes = isFavorite ? "now__heart active" : "now__heart"
 
     return (

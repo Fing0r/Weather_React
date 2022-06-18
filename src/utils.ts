@@ -1,14 +1,19 @@
-import {CONFIG} from "./config";
+import {CONFIG, STORAGE} from "./config";
 import { format } from "date-fns";
 
-export const removeFavoriteCity = (prv: string | Set<string>, city: string | null) => new Set([...prv].filter(v => v !== city));
-export const addFavoriteCity = (prv:  Set<string>, city: string) => new Set([...prv, city]);
-export function getDataFromStorage(storage: string) {
-    const getJSONFromStorage = localStorage.getItem(storage) || '[]'
+export function getDataFromStorage(storage: string, reserve = "[]") {
+    const getJSONFromStorage = localStorage.getItem(storage) ?? reserve
     return JSON.parse(getJSONFromStorage)
 }
 
-export function updateDataFromStorage(storage: string, data: string | string[]) {
+export function updateWeatherStatistics(city?: string | number) {
+    if  (typeof city === "undefined") return;
+    const statistics = {...getDataFromStorage(STORAGE.USER_STATS)}
+    statistics[city] = statistics[city] ? statistics[city] + 1 : 1
+    updateDataFromStorage(STORAGE.USER_STATS, statistics)
+}
+
+export function updateDataFromStorage(storage: string, data: string[] | string) {
     const dataJSON = JSON.stringify(data);
     localStorage.setItem(storage, dataJSON);
 }

@@ -1,6 +1,13 @@
-import {IInput} from "../types/UI";
+import {FC, HTMLProps} from "react";
 
-function Input({value, onChange, type, placeholder}: IInput) {
+const Input: FC<HTMLProps<HTMLInputElement>> = (
+    {
+        value,
+        onChange,
+        type,
+        placeholder
+    }
+) => {
     return (
         <label className="search__label">
             <input className="search__input"

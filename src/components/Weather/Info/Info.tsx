@@ -1,35 +1,24 @@
 import DetailsWeather from "../Details/Details";
 import NowWeather from "../Now/Now";
 import ForecastWeather from "../Forecast/Forecast";
-import {useState} from "react";
+import {FC, useState} from "react";
 import TabItem from "./TabItem";
 import TabBtn from "./TabBtn";
-import {IInfoWeather} from "../../types/Weather";
 
-function InfoWeather({cityInfo, setFavoriteCities, cityForecast}: IInfoWeather) {
+const InfoWeather: FC = () => {
     const [activeTab, setActiveTab] = useState("1")
     const handleChangeTab = (index: string) => setActiveTab(index);
-
-    const cityName = cityInfo?.name
 
     return (
         <div className="info">
             <TabItem tabItem="1" activeTab={activeTab}>
-                <NowWeather
-                    cityInfo={cityInfo}
-                    setFavoriteCity={setFavoriteCities}
-                />
+                <NowWeather/>
             </TabItem>
             <TabItem tabItem="2" activeTab={activeTab}>
-                <DetailsWeather
-                    cityInfo={cityInfo}
-                />
+                <DetailsWeather/>
             </TabItem>
             <TabItem tabItem="3" activeTab={activeTab}>
-                <ForecastWeather
-                    cityForecast={cityForecast}
-                    cityName={cityName}
-                />
+                <ForecastWeather/>
             </TabItem>
             <div className="info__btns">
                 <TabBtn

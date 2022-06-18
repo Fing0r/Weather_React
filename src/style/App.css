@@ -73,6 +73,45 @@ button {
     cursor: pointer;
 }
 
+.root {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.link {
+    text-decoration: underline;
+    color: blue;
+}
+
+.link:hover {
+    color: #FF0000;
+    transition: color 0.3s;
+}
+.header {
+    padding: 20px 0;
+    background-color: black;
+}
+
+.nav__list {
+    display: flex;
+    gap: 20px;
+}
+
+.nav__link {
+    color: #fff;
+}
+
+.nav__link--active {
+    color: #FF0000;
+}
+
 .weather {
     background-color: #E5E5E5;
 

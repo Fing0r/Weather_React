@@ -1,15 +1,17 @@
-import {FormEvent} from "react";
-import {ICitySearchForm} from "../../types/Weather";
+import {FC, FormEvent} from "react";
 import Input from "../../UI/Input";
 import ButtonSearch from "./Button";
-import useInput from "../../../hooks/useInput";
+import useInput from "@/hooks/useInput";
+import {useDispatch} from "react-redux";
+import {selectedCity} from "@/store/actionsCreators";
 
-function CitySearchForm({setSelectedCity}: ICitySearchForm) {
+const CitySearchForm: FC = () => {
     const [cityName, onChangeCityName, clearCityName] = useInput("");
+    const dispatch = useDispatch();
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        setSelectedCity(cityName);
+        dispatch(selectedCity(cityName));
         clearCityName();
     }
 

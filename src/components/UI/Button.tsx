@@ -1,15 +1,22 @@
 import {IButton} from "../types/UI";
+import {FC} from "react";
 
-function Button({children, className, label, onClick}: IButton) {
-    return (
-        <button
-            className={className || "btn"}
-            onClick={onClick}
-        >
-            {label}
-            {children}
-        </button>
-    )
-}
+const Button: FC<IButton> =
+    ({
+         children,
+         className,
+         label,
+         onClick
+     }) => {
+        return (
+            <button
+                className={className || "btn"}
+                onClick={onClick}
+            >
+                {label}
+                {children}
+            </button>
+        )
+    }
 
 export default Button

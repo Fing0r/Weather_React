@@ -1,14 +1,7 @@
-import {ChangeEventHandler, MouseEventHandler} from "react";
-
-export interface IInput {
-    value: string
-    onChange: ChangeEventHandler<HTMLInputElement>
-    type: string
-    placeholder: string
-}
+import {MouseEventHandler, ReactNode} from "react";
 
 export interface IButton {
-    children?: JSX.Element | never[]
+    children?: ReactNode
     className?: string
     onClick?: MouseEventHandler<HTMLButtonElement>
     type?: string

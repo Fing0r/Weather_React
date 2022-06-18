@@ -1,18 +1,26 @@
-import {removeFavoriteCity} from "../../../utils";
-import {IFavoriteCities} from "../../types/Weather";
+import {updateDataFromStorage} from "@/utils";
 import Button from "../../UI/Button";
+import {useDispatch} from "react-redux";
+import {removeCity, selectedCity} from "@/store/actionsCreators";
+import {useEffect} from "react";
+import {STORAGE} from "@/config";
+import {useTypedSelector} from "@/hooks/redux";
 
+const FavoriteCities = () => {
+    const {cities} = useTypedSelector(state => state.cities)
+    const dispatch = useDispatch();
 
-function FavoriteCities({favoriteCities, setFavoriteCities, setSelectedCity}: IFavoriteCities) {
+    useEffect(() => {
+        updateDataFromStorage(STORAGE.FAVORITE_CITIES, cities)
+    }, [cities])
+
     const getTargetWeather = (city: string) => {
-        setSelectedCity(city)
+        dispatch(selectedCity(city));
     }
 
-    const deleteFavoriteCity = (city: string | null) => {
-        setFavoriteCities(prv => removeFavoriteCity(prv, city))
-    }
+    const deleteFavoriteCity = (city: string) => dispatch(removeCity(city))
 
-    const cityItem = [...favoriteCities].map((item) => {
+    const cityItem = cities.map((item) => {
         return (
             <li className="cities__item" key={item}>
                 <Button
