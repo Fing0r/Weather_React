@@ -1,15 +1,15 @@
-import API from "./API"
-import {getUrl} from "../utils";
-import {CONFIG} from "../config"
-import {IForecastData, IForecastDataList, IWeatherData} from "../components/types/Weather";
+import API from "./API";
+import { getUrl } from "@/utils/utils";
+import { CONFIG } from "@/settings/config";
+import { IForecastDataList, IWeatherData } from "@/types/Weather";
 
 export default {
     getWeather(city: string) {
-        const url = getUrl(city, CONFIG.WEATHER)
-        return API().get<IWeatherData>(url)
+        const url = getUrl(city, CONFIG.WEATHER);
+        return API().get<IWeatherData>(url);
     },
     getForecast(city: string) {
-        const url = getUrl(city, CONFIG.FORECAST)
-        return API().get<IForecastDataList>(url)
-    }
-}
+        const url = getUrl(city, CONFIG.FORECAST);
+        return API().get<IForecastDataList>(url);
+    },
+};

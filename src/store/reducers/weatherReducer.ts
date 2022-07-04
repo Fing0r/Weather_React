@@ -1,20 +1,26 @@
-import {WeatherAction, WeatherInfoState} from "../types";
-import {WeatherActionTypes} from "../actions";
+import { WeatherAction, WeatherInfoState } from "@/types/store";
+import { WeatherActionTypes } from "@/store/actions/weatherActions";
 
 const initialState: WeatherInfoState = {
     weather: {},
-    forecast: []
-}
+    forecast: [],
+};
 
 function weatherReducer(state = initialState, action: WeatherAction) {
     switch (action.type) {
+        case WeatherActionTypes.GET_WEATHER:
+            return state;
+        case WeatherActionTypes.GET_FORECAST:
+            return state;
         case WeatherActionTypes.SET_WEATHER:
-            return {...state, weather: {...action.payload}}
+            console.log(action.payload);
+            return { ...state, weather: { ...action.payload } };
         case WeatherActionTypes.SET_FORECAST:
-            return {...state, forecast: [...action.payload]}
+            console.log(action.payload);
+            return { ...state, forecast: [...action.payload] };
         default:
-            return state
+            return state;
     }
 }
 
-export default weatherReducer
+export default weatherReducer;
