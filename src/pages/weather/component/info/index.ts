@@ -1,0 +1,1 @@
+export { InfoWeather } from "./info";

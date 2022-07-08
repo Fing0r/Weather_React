@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import "./style/App.css";
 import { Routes, Route } from "react-router-dom";
-import Weather from "./pages/Weather/Weather";
-import WeatherHelp from "./pages/Help";
-import WeatherStats from "./pages/Stats";
-import Layout from "@/UI/Layout";
+import { Weather } from "./pages/weather";
+import { WeatherHelp } from "./pages/help";
+import { WeatherStats } from "./pages/stats";
+import Layout from "@/ui/layout";
 
 const App: FC = () => (
     <Routes>

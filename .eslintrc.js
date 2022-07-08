@@ -32,6 +32,7 @@ module.exports = {
         "react/no-unescaped-entities": ["off"],
         "default-param-last": "off",
         "@typescript-eslint/default-param-last": ["error"],
+        "no-param-reassign": ["error", { props: true, ignorePropertyModificationsFor: ["state"] }],
         "react/function-component-definition": [
             2,
             {

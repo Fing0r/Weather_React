@@ -1,8 +1,9 @@
-import { applyMiddleware, createStore } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
 import weatherApp from "./reducers/reducers";
 
-const store = createStore(weatherApp, composeWithDevTools(applyMiddleware(thunk)));
+const store = configureStore({ reducer: weatherApp });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;

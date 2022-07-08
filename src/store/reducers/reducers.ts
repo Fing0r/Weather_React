@@ -1,12 +1,14 @@
 import { combineReducers } from "redux";
-import citiesReducer from "./citiesReducer";
-import weatherReducer from "./weatherReducer";
-import statsReducer from "./statsReducer";
+import citiesSlice from "./citiesSlice";
+import statsSlice from "./statsSlice";
+import currentWeatherSlice from "./currentWeatherSlice";
+import forecastSlice from "@/store/reducers/forecastSlice";
 
 const weatherApp = combineReducers({
-    cities: citiesReducer,
-    weather: weatherReducer,
-    stats: statsReducer,
+    cities: citiesSlice,
+    stats: statsSlice,
+    currentWeather: currentWeatherSlice,
+    forecast: forecastSlice,
 });
 
 export default weatherApp;

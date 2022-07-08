@@ -1,4 +1,4 @@
-import API from "./API";
+import API from "./api";
 import { getUrl } from "@/utils/utils";
 import { CONFIG } from "@/settings/config";
 import { IForecastDataList, IWeatherData } from "@/types/Weather";
