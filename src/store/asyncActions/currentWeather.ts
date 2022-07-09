@@ -27,6 +27,7 @@ const fetchCurrentWeather = createAsyncThunk(
             return createWeatherItem(data);
         } catch (e) {
             dispatch(selectedCity(""));
+            // @ts-ignore
             return rejectWithValue(e.data.message);
         }
     },

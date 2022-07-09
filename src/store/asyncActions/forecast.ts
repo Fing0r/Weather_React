@@ -15,6 +15,7 @@ const fetchForecast = createAsyncThunk(
             return list.map((item: IForecastData) => createForecastItem(item));
         } catch (e) {
             dispatch(selectedCity(""));
+            // @ts-ignore
             return rejectWithValue(e.data.message);
         }
     },
