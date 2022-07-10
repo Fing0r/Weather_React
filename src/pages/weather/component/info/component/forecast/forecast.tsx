@@ -10,6 +10,7 @@ const ForecastWeather = () => {
     if (!Object.keys(cityForecast).length) return null;
     const listItem = (forecastList: IForecastItem[]) =>
         forecastList.map((item) => <ForecastItem key={item.date} {...item} />);
+
     return (
         <div className='forecast'>
             <h3 className='forecast__city'>{cityName}</h3>

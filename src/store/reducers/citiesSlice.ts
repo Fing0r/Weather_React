@@ -1,14 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { STORAGE } from "@/settings/config";
 import { CitiesState } from "@/types/store";
-import { getDataFromStorage } from "@/utils/storageUtils";
-
-const cities = getDataFromStorage(STORAGE.FAVORITE_CITIES);
-const selected = getDataFromStorage(STORAGE.SELECTED_CITY);
 
 const initialState: CitiesState = {
-    cities: [...cities],
-    selected,
+    cities: [],
+    selected: "",
 };
 
 const citiesSlice = createSlice({

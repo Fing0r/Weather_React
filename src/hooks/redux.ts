@@ -3,6 +3,6 @@ import { IRootState } from "@/types/store";
 import { AppDispatch } from "@/store/store";
 
 const useAppSelector: TypedUseSelectorHook<IRootState> = useSelector;
-const useAppDispatch: () => AppDispatch = useDispatch;
+const useAppDispatch = () => useDispatch<AppDispatch>();
 
 export { useAppSelector, useAppDispatch };

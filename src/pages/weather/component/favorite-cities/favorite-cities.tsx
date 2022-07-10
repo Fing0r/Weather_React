@@ -1,18 +1,11 @@
-import { useEffect } from "react";
-import { STORAGE } from "@/settings/config";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { FavoriteCitiesItem } from "@/pages/weather/component/favorite-cities/component";
-import { updateDataFromStorage } from "@/utils/storageUtils";
 import { removeCity, selectedCity } from "@/store/reducers/citiesSlice";
 import { selectCities } from "@/store/selectors";
 
 const FavoriteCities = () => {
     const cities = useAppSelector(selectCities);
     const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        updateDataFromStorage(STORAGE.FAVORITE_CITIES, cities);
-    }, [cities]);
 
     const getTargetWeather = (city: string) => dispatch(selectedCity(city));
     const deleteFavoriteCity = (city: string) => dispatch(removeCity(city));

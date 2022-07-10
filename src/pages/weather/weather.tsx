@@ -3,18 +3,15 @@ import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { CitySearchForm } from "./component/search";
 import { FavoriteCities } from "./component/favorite-cities";
 import { InfoWeather } from "./component/info";
-import { updateDataFromStorage } from "@/utils/storageUtils";
 import fetchCurrentWeather from "@/store/asyncActions/currentWeather";
 import fetchForecast from "@/store/asyncActions/forecast";
 import { selectSelected } from "@/store/selectors";
-import { STORAGE } from "@/settings/config";
 
 const Weather: FC = () => {
     const selected = useAppSelector(selectSelected);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        updateDataFromStorage(STORAGE.SELECTED_CITY, selected);
         if (!selected) return;
         dispatch(fetchCurrentWeather(selected));
         dispatch(fetchForecast(selected));
@@ -38,7 +35,3 @@ const Weather: FC = () => {
 };
 
 export { Weather };
-
-// const {userStats} = useTypedSelector(state => state.stats);
-// dispatch(updateStats(cityInfo.name));
-// updateDataFromStorage(STORAGE.USER_STATS, userStats);

@@ -1,12 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { STORAGE } from "@/settings/config";
 import { StatsState } from "@/types/store";
-import { getDataFromStorage } from "@/utils/storageUtils";
-
-const statistics = getDataFromStorage(STORAGE.USER_STATS);
 
 const initialState: StatsState = {
-    userStats: { ...statistics },
+    userStats: {},
 };
 
 const statsSlice = createSlice({
