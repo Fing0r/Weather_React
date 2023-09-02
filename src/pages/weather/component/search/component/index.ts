@@ -1,1 +1,0 @@
-export { ButtonSearch } from "./button";

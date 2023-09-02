@@ -1,0 +1,109 @@
+.cities {
+  flex-direction: column;
+  max-height: 100%;
+  height: 100%;
+
+  @media (max-width: 600px) {
+    background-color: #fff;
+    min-height: 300px;
+    height: 45vh;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+    padding: 8px 15px;
+    border-bottom: 1px solid #000000;
+  }
+
+  &__list {
+    overflow: auto;
+    max-height: 323px;
+    height: 100%;
+    padding: 26px 15px 10px 9px;
+    border-top: 1px solid #000000;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    @media (max-width: 600px) {
+      height: unset;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    text-align: start;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+
+
+    &:hover {
+      background-color: #8b8484;
+    }
+  }
+
+  &__name {
+    padding: 9px 0;
+    padding-left: 9px;
+    text-align: left;
+    height: 100%;
+    color: inherit;
+    flex: 1 1 100%;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    &:active {
+      background-color: #8b8484;
+    }
+  }
+
+  &__close {
+    position: relative;
+    padding: 9px 0;
+    flex: 0 0 50px;
+    color: inherit;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    &:active {
+      background-color: #8b8484;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background-color: #000000;
+      transition: background-color 0.3s;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: #fff;
+    }
+
+    &::after {
+      width: 2px;
+      height: 25px;
+    }
+
+    &::before {
+      width: 25px;
+      height: 2px;
+    }
+  }
+}

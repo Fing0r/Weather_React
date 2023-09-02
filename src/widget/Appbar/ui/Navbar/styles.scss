@@ -1,0 +1,14 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    color: #fff;
+
+    &.active {
+      color: #ff0000;
+    }
+  }
+}

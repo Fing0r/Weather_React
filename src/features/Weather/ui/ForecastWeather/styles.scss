@@ -1,0 +1,56 @@
+.forecast {
+  &__card {
+    font-size: 18px;
+    width: 100%;
+    border: 1px solid #000000;
+    padding: 9px;
+
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
+  }
+
+  &__city {
+    margin-bottom: 7px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 38px;
+  }
+
+  &__time {
+    span {
+      display: block;
+    }
+  }
+
+  &__temperature {
+    span {
+      display: block;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__weather {
+    img,
+    span {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 31px;
+    height: 31px;
+  }
+}

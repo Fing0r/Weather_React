@@ -1,0 +1,17 @@
+.details {
+  &__city {
+    font-size: 24px;
+    margin-bottom: 42px;
+    font-weight: 400;
+  }
+
+  &__info {
+    span {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+    }
+  }
+}

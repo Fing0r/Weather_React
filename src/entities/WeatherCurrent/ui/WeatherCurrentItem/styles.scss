@@ -1,0 +1,63 @@
+.now {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__city {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  &__temp {
+    font-size: 70px;
+    display: block;
+    font-weight: 400;
+  }
+
+  &__img {
+    align-self: center;
+    display: block;
+    margin-bottom: auto;
+    object-fit: cover;
+    width: 6.5em;
+    height: 6.5em;
+
+    &[src=''] {
+      display: none;
+    }
+  }
+
+  &__bottom {
+    display: block;
+  }
+
+  &__heart {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    right: 14px;
+    bottom: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s, fill 0.3s;
+
+    &:hover {
+      color: red;
+    }
+
+    &:active {
+      color: inherit;
+    }
+
+    & svg {
+      transition: color 0.3s, fill 0.3s;
+    }
+
+    &.active svg {
+      color: red;
+      fill: currentColor;
+    }
+  }
+}
