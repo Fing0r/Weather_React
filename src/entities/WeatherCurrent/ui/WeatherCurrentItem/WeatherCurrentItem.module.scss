@@ -44,7 +44,7 @@
     transition: color 0.3s, fill 0.3s;
 
     &:hover {
-      color: red;
+      color: var(--color-red);
     }
 
     &:active {
@@ -56,7 +56,7 @@
     }
 
     &.active svg {
-      color: red;
+      color: var(--color-red);
       fill: currentColor;
     }
   }
