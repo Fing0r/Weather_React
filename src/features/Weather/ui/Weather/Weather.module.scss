@@ -1,6 +1,6 @@
 
 .weather {
-  background-color: #e5e5e5;
+  background-color: var(--color-gray);
   display: flex;
   justify-content: center;
   min-height: calc(100vh - 68px);
@@ -11,11 +11,11 @@
   }
 
   &__list {
-    background-color: #fff;
+    background-color: var(--color-white);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 44px 1fr;
-    border: 1px solid #000000;
+    border: 1px solid var(--color-black);
     flex: 0 1 600px;
     min-height: 440px;
     max-height: 440px;
@@ -28,7 +28,7 @@
   }
 
   &__item {
-    border: 1px solid #000000;
+    border: 1px solid var(--color-black);
 
     &:nth-child(1) {
       grid-area: 1 / 1 / 2 / 3;

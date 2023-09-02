@@ -1,24 +1,25 @@
-import { FavoriteCities } from '../FavoriteCities/FavoriteCities'
-import { SearchForm } from '../SearchForm/SearchForm'
-import { WeatherInfo } from '../WeatherInfo/WeatherInfo'
-import './styles.scss'
+import { FavoriteCities } from '../FavoriteCities/FavoriteCities';
+import { SearchForm } from '../SearchForm/SearchForm';
+import { WeatherInfo } from '../WeatherInfo/WeatherInfo';
+
+import cls from './Weather.module.scss';
 
 const Weather = () => {
   return (
-    <div className='weather'>
-      <div className='weather__list'>
-        <div className='weather__item weather__item--search'>
-          <SearchForm/>
+    <div className={cls.weather}>
+      <div className={cls.weather__list}>
+        <div className={cls.weather__item}>
+          <SearchForm />
         </div>
-        <div className='weather__item weather__item--info'>
-          <WeatherInfo/>
+        <div className={cls.weather__item}>
+          <WeatherInfo />
         </div>
-        <div className='weather__item weather__item--cities'>
-          <FavoriteCities/>
+        <div className={cls.weather__item}>
+          <FavoriteCities />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export { Weather }
+export { Weather };

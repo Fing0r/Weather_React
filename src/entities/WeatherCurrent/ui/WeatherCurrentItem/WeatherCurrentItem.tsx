@@ -1,10 +1,10 @@
 import { WeatherCurrent } from '../../model/types/weatherCurrent';
 
+import cls from './WeatherCurrentItem.module.scss';
+
 import HeartIcon from '@/shared/assets/icons/heart.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
-
-import './styles.scss';
 
 interface NowWeatherProps {
   weather: WeatherCurrent;
@@ -25,16 +25,21 @@ const WeatherCurrentItem = (props: NowWeatherProps) => {
   const imgPath = `https://openweathermap.org/img/wn/${icon}@4x.png`;
 
   return (
-    <div className="now">
-      <span className="now__temp">{`${Math.round(temp)}°`}</span>
-      <img className="now__img" alt="" width="78" height="59"
-src={imgPath} />
-      <div className="now__bottom">
-        <h3 className="now__city">{name}</h3>
+    <div className={cls.now}>
+      <span className={cls.now__temp}>{`${Math.round(temp)}°`}</span>
+      <img
+        className={cls.now__img}
+        alt=""
+        width="78"
+        height="59"
+        src={imgPath}
+      />
+      <div className={cls.now__bottom}>
+        <h3 className={cls.now__city}>{name}</h3>
         <Button
           onClick={onClick}
-          className={classNames('now__heart', {
-            active: isFavorites,
+          className={classNames(cls.now__heart, {
+            [cls.active]: isFavorites,
           })}
         >
           <HeartIcon />

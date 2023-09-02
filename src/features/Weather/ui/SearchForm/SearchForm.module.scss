@@ -3,10 +3,6 @@
   display: flex;
   height: 100%;
 
-  &__input::placeholder {
-    color: #696969;
-  }
-
   &__btn {
     width: 50px;
     height: 100%;
@@ -16,8 +12,8 @@
     transition: background-color 0.3s, color 0.3s, opacity 3.3s;
 
     &:hover {
-      background-color: #000;
-      color: #fff;
+      background-color: var(--color-black);
+      color: var(--color-white);
     }
 
     & path {
@@ -29,7 +25,7 @@
     }
 
     &:active {
-      background-color: #8b8484;
+      background-color: var(--color-gray);
     }
   }
 }

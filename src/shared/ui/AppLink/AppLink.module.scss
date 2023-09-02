@@ -1,0 +1,9 @@
+.link {
+  text-decoration: underline;
+  color: var(--color-blue);
+
+  &:hover {
+    color: var(--color-red);
+    transition: color 0.3s;
+  }
+}

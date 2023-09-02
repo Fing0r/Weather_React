@@ -1,18 +1,15 @@
-import { InputHTMLAttributes, memo } from "react";
-import './styles.scss'
+import { InputHTMLAttributes, memo } from 'react';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-}
+import cls from './Input.module.scss';
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 const Input = memo((props: InputProps) => {
   return (
-    <label className='label' htmlFor={props.name}>
-      <input
-        {...props}
-        className='input'
-      />
+    <label className={cls.label} htmlFor={props.name}>
+      <input {...props} className={cls.input} />
     </label>
   );
 });
 
-export { Input }
+export { Input };

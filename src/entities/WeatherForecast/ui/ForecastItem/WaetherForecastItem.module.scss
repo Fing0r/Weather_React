@@ -1,19 +1,11 @@
-.forecast {
-  &__card {
-    font-size: 18px;
-    width: 100%;
-    border: 1px solid #000000;
-    padding: 9px;
+.forecastItem {
+  font-size: 18px;
+  width: 100%;
+  border: 1px solid var(--color-black);
+  padding: 9px;
 
-    &:not(:last-child) {
-      margin-bottom: 9px;
-    }
-  }
-
-  &__city {
-    margin-bottom: 7px;
-    font-size: 24px;
-    font-weight: 400;
+  &:not(:last-child) {
+    margin-bottom: 9px;
   }
 
   &__top {

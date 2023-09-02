@@ -6,6 +6,8 @@ import { fetchForecast } from '../../model/services/fetchForecast';
 import { chooseCity, removeCity } from '../../model/slice/favoriteCitiesSlice';
 import { FavoriteCitiesItem } from '../FavoriteCitiesItem/FavoriteCitiesItem';
 
+import cls from './FavoriteCities.module.scss';
+
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/redux';
 
 interface FavoriteCitiesProps {}
@@ -38,9 +40,9 @@ const FavoriteCities = memo((props: FavoriteCitiesProps) => {
   ));
 
   return (
-    <div className="cities">
-      <h2 className="cities__title">Added Locations:</h2>
-      {!!favoriteItems && <ul className="cities__list">{favoriteItems}</ul>}
+    <div className={cls.cities}>
+      <h2 className={cls.cities__title}>Added Locations:</h2>
+      {!!favoriteItems && <ul className={cls.cities__list}>{favoriteItems}</ul>}
     </div>
   );
 });

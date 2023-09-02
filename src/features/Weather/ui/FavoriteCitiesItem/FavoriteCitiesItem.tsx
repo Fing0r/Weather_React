@@ -1,7 +1,8 @@
 import { memo, useCallback } from 'react';
 
+import cls from './FavoriteCitiesItem.module.scss';
+
 import { Button } from '@/shared/ui/Button';
-import './styles.scss';
 
 export interface FavoriteCitiesItemProps {
   label: string;
@@ -23,16 +24,16 @@ const FavoriteCitiesItem = memo((props: FavoriteCitiesItemProps) => {
   );
 
   return (
-    <li className="cities__item">
+    <li className={cls.citiesItem}>
       <Button
-        className="cities__name"
+        className={cls.citiesItem__name}
         type="button"
         onClick={handleClickGetWeather}
       >
         {label}
       </Button>
       <Button
-        className="cities__close"
+        className={cls.citiesItem__close}
         type="button"
         onClick={handleClickDelete}
       />

@@ -2,9 +2,10 @@ import React from 'react';
 
 import { getForecast, getWeather } from '../../model/selectors/favoriteCities';
 
+import cls from './ForecastWeather.module.scss';
+
 import { ForecastWeatherItem } from '@/entities/WeatherForecast';
 import { useAppSelector } from '@/shared/lib/hooks/redux';
-import './styles.scss';
 
 interface ForecastWeatherProps {}
 
@@ -13,10 +14,10 @@ const ForecastWeather = (props: ForecastWeatherProps) => {
   const forecast = useAppSelector(getForecast);
 
   return (
-    <div className="forecast">
-      {cityName && <h3 className="forecast__city">{cityName}</h3>}
+    <div className={cls.forecast}>
+      {cityName && <h3 className={cls.forecast__city}>{cityName}</h3>}
       {forecast && Object.keys(forecast).length ? (
-        <ul className="forecast__list">
+        <ul>
           {forecast.map((item) => (
             <ForecastWeatherItem {...item} key={item.date} />
           ))}
