@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { selectStats } from '../model/selectors/selectors';
 
-import { getWeatherStatistics } from '@/pages/StatisticPage/ui/utils';
+import { getWeatherStatistics } from '@/pages/StatisticPage/lib/utils';
 import { useAppSelector } from '@/shared/lib/hooks/redux';
 
 const StatisticPage: FC = () => {

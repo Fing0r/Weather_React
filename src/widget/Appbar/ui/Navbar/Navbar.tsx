@@ -11,7 +11,7 @@ const navbarItemsList: NavbarItemType[] = [
     title: 'Погода',
   },
   {
-    to: '/stats',
+    to: '/statistic',
     title: 'Статистика',
   },
   {
